@@ -1,0 +1,39 @@
+{
+	"employees" : [
+		{
+			"name" : "Ahmed",
+			"id" : "5544"
+		},
+		{
+			"name" : "Jan",
+			"id" : "6677"
+		},
+		{
+			"name" : "Casper",
+			"id" : "2233"
+		},
+		{
+			"name" : "Rasmus",
+			"id" : "1133"
+		},
+		{
+			"name" : "Stevie",
+			"id" : "2345"
+		}
+
+	],
+	"groups" : [
+		{
+			"employeeIDs" : ["2345", "6677"],
+			"name" : "Pizzas"
+		},
+		{
+			"employeeIDs" : ["2233", "5544"],
+			"name" : "Hotdogs"
+		},
+		{
+			"employeeIDs" : ["2233", "1133"],
+			"name" : "Tacos"
+		}
+	]
+}

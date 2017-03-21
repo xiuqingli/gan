@@ -1,0 +1,29 @@
+{
+  "name": "simple-restapi",
+  "version": "1.0.0",
+  "description": "GAN integrity code challenge",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiuqingli/gan.git"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Xiuqing Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiuqingli/gan/issues"
+  },
+  "homepage": "https://github.com/xiuqingli/gan#readme",
+  "dependencies": {
+    "async": "^2.1.5",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-validator": "^3.1.2",
+    "jsonfile": "^2.4.0"
+  }
+}
