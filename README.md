@@ -1,3 +1,10 @@
+# Read Me
+```sh
+$ git clone https://github.com/xiuqingli/gan.git
+$ cd gan
+$ npm install
+$ node .
+```
 
 a) GET
 http://localhost:3000/group
