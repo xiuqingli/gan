@@ -5,6 +5,7 @@ var dataUtil = new DataUtil();
 var express = require('express');
 var groupRouter = express.Router();
 
+//a.) Return all group data as JSON
 groupRouter.get('/', function(req, res) {
   dataUtil.fetchAll(
     function(err, data) {

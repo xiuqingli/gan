@@ -8,7 +8,7 @@ var employeeRouter = express.Router();
 var employeeUtil = require('../lib/routes/employeeUtil');
 var DataUtil = require('../lib/dataUtil');
 var dataUtil = new DataUtil();
-
+//b.) Return all employee data as JSON
 employeeRouter.get('/', function(req, res) {
   dataUtil.fetchAll(
     function(err, data) {
@@ -22,7 +22,8 @@ employeeRouter.get('/', function(req, res) {
     }
   );
 });
-
+//c.) RESTfully accept an employee name as a parameter and return all group names
+//to which the employee belongs
 employeeRouter.get('/name/:name', function(req, res) {
   req.checkParams('name', 'Invalid name').optional().isAlpha();
   req.getValidationResult().then(function(result) {
@@ -44,7 +45,8 @@ employeeRouter.get('/name/:name', function(req, res) {
     );
   });
 });
-
+//d.) Create a new employee with the following data: 
+//{“name” : “Jose”, “id” : “7788”}
 employeeRouter.post('/', function(req, res) {
   req.checkBody('name', 'Invalid name').notEmpty().isAlpha();
   req.checkBody('id', 'Invalid id').notEmpty().isNumeric();
@@ -78,7 +80,9 @@ employeeRouter.post('/', function(req, res) {
     );
   });
 });
-
+//e.) Expose a route which RESTfully accepts an employee ID and 
+//makes three sequential calls to our mock API and 
+//returns the final supervisor object as JSON
 employeeRouter.get('/:id([0-9]+)', function(req, res) {
   var employeeId = req.params.id;
   req.getValidationResult().then(function(result) {
