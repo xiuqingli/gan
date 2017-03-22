@@ -86,30 +86,9 @@ employeeRouter.get('/:id([0-9]+)', function(req, res) {
       return res.status(400).json(result.array());
     }
     async.waterfall([
-      function(callback) {
-        request('http://localhost:3000/mock-api/employee/2233', function(err, response, body) {
-          if (err) {
-            return callback(err);
-          }
-          callback();
-        });
-      },
-      function(callback) {
-        request('http://localhost:3000/mock-api/organization/gan', function(err, response, body) {
-          if (err) {
-            return callback(err);
-          }
-          callback();
-        });
-      },
-      function(callback) {
-        request('http://localhost:3000/mock-api/supervisor/1234', function(err, response, body) {
-          if (err) {
-            return callback(err);
-          }
-          callback(null, body);
-        });
-      }
+      callMockEmployee,
+      callMockOrganization,
+      callMockSupervisor
     ], function(err, result) {
       if (err) {
         res.status(500).json(err);
@@ -120,4 +99,30 @@ employeeRouter.get('/:id([0-9]+)', function(req, res) {
   });
 });
 
+function callMockEmployee(callback) {
+  request('http://localhost:3000/mock-api/employee/2233', function(err, response, body) {
+    if (err) {
+      return callback(err);
+    }
+    callback();
+  });
+}
+
+function callMockOrganization(callback) {
+  request('http://localhost:3000/mock-api/organization/gan', function(err, response, body) {
+    if (err) {
+      return callback(err);
+    }
+    callback();
+  });
+}
+
+function callMockSupervisor(callback) {
+  request('http://localhost:3000/mock-api/supervisor/1234', function(err, response, body) {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, body);
+  });
+}
 module.exports = employeeRouter;
