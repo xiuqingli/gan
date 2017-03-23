@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var DataUtil = require('../lib/dataUtil');
 var dataUtil = new DataUtil();
